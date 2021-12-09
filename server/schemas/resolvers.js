@@ -13,7 +13,7 @@ const resolvers = {
     },
 
     Mutation: {
-        addUser: async (parent, args, context) => {
+        createUser: async (parent, args, context) => {
             const user = await User.create(args);
             const token = signToken(user);
             return { user, token };
